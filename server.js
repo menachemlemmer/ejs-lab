@@ -56,7 +56,21 @@ const RESTAURANT = {
 };
 
 app.get("/", (req, res) => {
-  res.send("Hello There!");
+  res.render("home.ejs", { restaurant: RESTAURANT });
+});
+
+app.get("/menu", (req, res) => {
+  res.render("menu.ejs", { menu: RESTAURANT.menu });
+});
+
+app.get("/menu/:category", (req, res) => {
+  const name =
+    req.params.category[0].toUpperCase() + req.params.category.slice(1);
+  const menuItems = RESTAURANT.menu.filter((item) => {
+    return item.category === req.params.category;
+  });
+
+  res.render("category.ejs", { menuItems, name });
 });
 
 app.listen(3000);
