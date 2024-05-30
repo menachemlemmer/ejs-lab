@@ -11,7 +11,7 @@
     <h1>Full Menu</h1>
     <h2>Mains</h2>
     <% menu.forEach((item) => { %> <% if (item.category === 'mains') { %>
-    <h5><%= item.name %></h5>
+    <h5><%= item.rating === 5 ? "⭐" : "" %><%= item.name %></h5>
     <ul>
       <li>Price: <%= item.price %></li>
       <li>Rating: <%= item.rating %></li>
@@ -20,7 +20,7 @@
     <% } %> <% }) %>
     <h2>Sides</h2>
     <% menu.forEach((item) => { %> <% if (item.category === 'sides') { %>
-    <h5><%= item.name %></h5>
+    <h5><%= item.rating === 5 ? "⭐" : "" %><%= item.name %></h5>
     <ul>
       <li>Price: <%= item.price %></li>
       <li>Rating: <%= item.rating %></li>
@@ -29,7 +29,7 @@
     <% } %> <% }) %>
     <h2>Desserts</h2>
     <% menu.forEach((item) => { %> <% if (item.category === 'desserts') { %>
-    <h5><%= item.name %></h5>
+    <h5><%= item.rating === 5 ? "⭐" : "" %><%= item.name %></h5>
     <ul>
       <li>Price: <%= item.price %></li>
       <li>Rating: <%= item.rating %></li>
